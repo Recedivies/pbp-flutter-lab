@@ -15,7 +15,7 @@ Perbedaannya, _stateful widget_ dapat mengubah state yang telah diset di awal. S
 Widget yang dipakai pada tugas ini :
 
 - Text, untuk menampung beberapa teks yang akan ditampilkan di layar.
-- FloatingActionButton, untuk menampilkan sebuah tombol yang dapat melakukan suatu tindakan ketika diklik yang dekat dengan.
+- FloatingActionButton, untuk menampilkan sebuah tombol yang dapat melakukan suatu tindakan ketika diklik.
 - Row, untuk mengatur semua widget turunannya secara horizontal
 - Column, untuk mengatur semua widget turunannya secara vertikal
 - Visibility, untuk menampilkan/menyembunyikan semua widget turunannya dari widget ini.
