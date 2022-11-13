@@ -81,3 +81,50 @@ bool _removeVisibilityHandler() {
 ```
 
 ### **6.** Membuat beberapa widget yang diperlukan. Tambahkan juga layouting dan control widget agar rapi dan sesuai.
+
+<div align="center" style="padding-bottom: 10px">
+<h1>Tugas 8 PBP</h1>
+</div>
+
+## Perbedaan Navigator.push dan Navigator.pushReplacement
+
+- Navigator.push
+  ketika method ini dilakukan, halaman yang baru akan menimpa halaman sebelumnya.
+- Navigator.pushReplacement
+  Ketika method ini dilakukan, halaman yang baru akan menggantikan halaman sebelumnya.
+
+## Widget yang dipakai di proyek tugas 8
+
+- `Card` Wdiget untuk membuat persegi panjang dengan keempat sudutnya bulat dan terdapat efek bayangan di tepi.
+  1
+- `Form` Widget yang menjadi _parent_ widget semua form fields.
+
+- `Drawer` Widget yang menyediakan sebuah panel yang dapat dimunculkan dan disembunyikan di samping layar. Digunakan sebagai navigasi.
+
+- `Expanded` Widget yang digunakan membuat size _child_ widgetnya mengisi tempat yang tersedia.
+
+- `DropdownButton` Widget berupa button yang ketika diklik memunculkan beberapa pilihan. Digunakan sebagai input pemasukan atau pengeluaran.
+
+- `TextButton` Widget berupa button yang dapat diberi tulisan. Digunakan sebagai button untuk memunculkan date picker dan submit form.
+
+- `TextFormField` Widget yang memberikan fungsionalitas input text. Digunakan sebagai input judul dan nominal.
+
+## Jenis-jenis event yang ada pada Flutter
+
+- onPressed: event yang di*trigger* ketika sebuah tombol ditekan.
+- onChanged: event yang di*trigger* ketika terjadi perubahan pada sebuah widget.
+- onSaved: event yang di*trigger* ketika sebuah form disimpan.
+
+## Cara kerja Navigator dalam "mengganti" halaman dari aplikasi Flutter
+
+Widget Navigator di Flutter digunakan untuk mempertahankan tumpukan _stack_ dan berperan dalam membantu menavigasikan antar _route_. Mengganti halaman dapat menggunakan method `push` untuk menimpa halaman sebelumnya, `pushReplacement` untuk menghapus halaman sebelumnya dan mengganti dengan halaman yang baru, `pop` untuk kembali ke halaman sebelumnya (menghapus halaman sekarang).
+
+## Implementasi Tugas 8
+
+### **1.** Membuat widget Drawer di file yang terpisah (`drawer.dart`) yang berisi tombol navigasi untuk ke halaman counter, form, dan halaman yang menampilkan data budget yang telah di-input melalui form.
+
+### **2.** Menambahkan file baru (`form.dart`) untuk membuat Form dan Elemen Input. Di halaman form, terdapat widget input judul, nominal, jenis tipe _budget_, _date picker_, dan button untuk submit form.
+
+### **3.** Menambahkan file baru (`budget.dart`) membuat class **Budget** berisi attribut budget seperti judul, nominal, jenis, dan date, dan array list untuk menampilkan data-data _budgets_.
+
+### **4.** Menambahkan file baru (`data.dart`) untuk menampilkan data budget yang telah di-input melalui form dan disimpan dalam array list `budgets`.
