@@ -128,3 +128,45 @@ Widget Navigator di Flutter digunakan untuk mempertahankan tumpukan _stack_ dan 
 **3.** Menambahkan file baru (`budget.dart`) membuat class **Budget** berisi attribut budget seperti judul, nominal, jenis, dan date, dan array list untuk menampilkan data-data _budgets_.
 
 **4.** Menambahkan file baru (`data.dart`) untuk menampilkan data budget yang telah di-input melalui form dan disimpan dalam array list `budgets`.
+
+<div align="center" style="padding-bottom: 10px">
+<h1>Tugas 9 PBP</h1>
+</div>
+
+## Apakah bisa kita melakukan pengambilan data JSON tanpa membuat model terlebih dahulu ? Jika iya, apakah hal tersebut lebih baik daripada membuat model sebelum melakukan pengambilan data JSON?
+
+Bisa. Membuat model sebelum melakukan pengambilan data JSON lebih baik karena dapat merepresentasikan data dan struktur data apa yang akan diterima saat melakukan pengambilan data JSON agar sesuai dengan _response_. Kalau tidak membuat model, maka perlu menyesuaikan manual data apa saja yang diterima dan tipe datanya ketika mendapat data _response_.
+
+## Widget yang dipakai di proyek tugas 9 dan penjelasannya
+
+- `ElevatedButton` Widget berupa button yang dapat diberi tulisan dan terdapat warna _background_ di buttonnya. Digunakan sebagai button untuk `Back` pada halaman detail.
+
+- `Flexible` Widget yang mengontrol bagaimana turunan widget Baris, Kolom, atau Flex di*flex*. Digunakan saat menampilkan String Review pada halaman detail agar tidak overflow.
+
+- `RichText` Widget yang menampilkan teks yang menggunakan beberapa `style` yang berbeda-beda. Teks yang didisplay menggunakan objek `TextSpan` yang memiliki masing-masingg `style` terkait.
+
+- `TextSpan` Widget yang dapat memberikan `style` pada teks. Dapat memiliki keturunan widget untuk menspesifikasikan `style` pada keturunan widgetnya. Digunakan saat menampilkan text di halaman detail.
+
+## Mekanisme pengambilan data dari json hingga dapat ditampilkan pada Flutter
+
+1. Pertama dengan depedensi `http`, Flutter dapat melakukan HTTP _request_ seperti **GET**.
+
+2. Membuat model class yang sesuai dengan _response_ data yang akan diambil.
+
+3. Melakukan HTTP GET _request_ untuk pengambilan data JSON.
+
+4. Mengkonversikan data JSON yang diambil ke model class yang telah dibuat.
+
+5. Menampilkan data dengan `FutureBuilder`.
+
+## Implementasi Tugas 9
+
+**1.** Refactor file di dalam folder `lib` menjadi 3 folder, yaitu `model`, `page`, dan `utils`. Menambahkan tombol navigasi pada `drawer` ke halaman `mywatchlist`.
+
+**2.** Membuat file `mywatchlist.dart` di folder `model` untuk membuat Model **MyWatchList** untuk mempermudah data dan struktur data apa yang akan diterima nantinya ketika melakukan pemanggilan JSON dari _web service_.
+
+**3.** Membuat file `fetchmywatchlist.dart` di folder `utils` untuk melakukan pengambilan data JSON dari _web service_ berupa data _watchlist_. File tersebut dengan depedensi HTTP melakuakn _request_ ke server heroku yang sudah di*deploy* di tugas 3.
+
+**4.** Membuat file `mywatchlist.dart` di folder `page` untuk menampilkan seluruh judul _watchlist_ pada halaman _mywatchlist_. Setiap judul _watchlist_ ditampilkan per baris yang dibungkus dengan widget `Card`. Kemudian dibuat navigasi dari setiap judul ke halaman detail menggunakan widget `ListTile`
+
+**5.** Membuat file `mywatchlistdetail.dart` di folder `page` untuk menampilkan halaman detail untuk setiap _watchlist_ pada halaman _mywatchlist_. Halamannya menampilkan judul, release date, rating, review, dan status (sudah ditonton/belum). Tambahkan juga tombol Back untuk kembali ke halaman _mywatchlist_.
